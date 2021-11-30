@@ -3,7 +3,7 @@
 #include "libraries/functions.h"
 
 #define MAX_LEN_VERSO 150
-#define PATH_TO_DATABASE "futuribili.txt"
+#define PATH_TO_DATABASE "../futuribili.txt"
 
 //visualizza il menù delle opzioni
 void VisualizzaMenu();
@@ -72,9 +72,8 @@ int main(int argc, char** argv) {
     case 3:
     {
         char* verso = InserisciVerso();
-        char** database = CaricaDatabase(PATH_TO_DATABASE);
-        if (verso != NULL && database != NULL) {
-            char* verso_in_rima = CercaRima(verso, database);
+        if (verso != NULL) {
+            char* verso_in_rima = CercaRima(verso, PATH_TO_DATABASE);
             if (verso_in_rima != NULL) {
                 printf("Ecco il verso che fa per te!\n=> %s", verso_in_rima);
             }
@@ -107,9 +106,8 @@ int main(int argc, char** argv) {
     case 5:
     {
         char* verso = InserisciVerso();
-        char** database = CaricaDatabase(PATH_TO_DATABASE);
-        if (verso != NULL && database != NULL) {
-            verso = CercaCesura(database);
+        if (verso != NULL) {
+            verso = CercaCesura(PATH_TO_DATABASE);
             if (verso != NULL) {
                 printf("Il verso che è stato trovato e cesurato e':\n=> %s", verso);
             }
@@ -144,9 +142,8 @@ int main(int argc, char** argv) {
     case 7:
     {
         char* verso = InserisciVerso();
-        char** database = CaricaDatabase(PATH_TO_DATABASE);
-        if (verso != NULL && database != NULL) {
-            char* verso_in_assonanza = CercaAssonanza(verso, database);
+        if (verso != NULL) {
+            char* verso_in_assonanza = CercaAssonanza(verso, PATH_TO_DATABASE);
             if (verso_in_assonanza != NULL) {
                 printf("Ecco il verso che fa per te!\n=> %s", verso_in_assonanza);
             }
@@ -179,21 +176,15 @@ int main(int argc, char** argv) {
     }
     case 9:
     {
-        char** database = CaricaDatabase(PATH_TO_DATABASE);
-        if (database != NULL) {
-            char lettera;
-            printf("Inserisci una lettera per la ricerca della alliterazione => ");
-            scanf("%c", &lettera);
-            char* verso_alliterante = CercaAlliterazione(lettera, database);
-            if (verso_alliterante != NULL) {
-                printf("Abbiamo trovato un verso alliterante:\n => %s", verso_alliterante);
-            }
-            else {
-                printf("Non è stato possibile trovare un verso alliterante.");
-            }
+        char lettera;
+        printf("Inserisci una lettera per la ricerca della alliterazione => ");
+        scanf("%c", &lettera);
+        char* verso_alliterante = CercaAlliterazione(lettera, PATH_TO_DATABASE);
+        if (verso_alliterante != NULL) {
+            printf("Abbiamo trovato un verso alliterante:\n => %s", verso_alliterante);
         }
         else {
-            CreaErrore();
+            printf("Non è stato possibile trovare un verso alliterante.");
         }
         break;
     }

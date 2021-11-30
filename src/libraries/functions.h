@@ -1,25 +1,22 @@
 #pragma once
 
-//dati due versi, controlla la metrica (la lunghezza)
+//controlla la compatibilità di due versi
 int CalcolaCompatibilita(char*, char*);
-//dati due versi, verificare se sono in rima
+//controlla se due versi sono in rima o meno
 int CheckInRima(char*, char*);
-//dato un verso e il database, cercarne uno tra quanti non ancora usati, che sia in rima
-char* CercaRima(char*, char**);
-//dato un verso visualizzarne, se esiste, la cesura
+//controlla se, dato un verso, ne esiste uno nel database di cui viene forntio il percorso relativo
+char* CercaRima(char*, const char*);
+//applica la cesura su un verso, se possibile
 char* ApplicaCesura(char*);
-//cercare un verso tra quanti non ancora usati, cui sia possibile applicare una cesura, dato il database
-char* CercaCesura(char**);
-// dati due versi, verificare se c’`e assonanza
+//cerca in un data base di cui viene fornito il percorso relativo se esiste un verso cesurabile(?)
+char* CercaCesura(const char*);
+//controlla se due verrsi sono assonanti
 int CheckAssonanza(char*, char*);
-//dato un verso, cercarne uno tra quanti non ancora usati, che abbia assonanza, dato il database
-char* CercaAssonanza(char*, char**);
-//dato un verso, sapere se c’`e allitterazione
+//controlla se, dato un verso, ne esiste uno assonante nel database di cui viene forntio il percorso relativo
+char* CercaAssonanza(char*, const char*);
+//controlla se in un verso è presente una alliterazione
 int CheckAlliterazione(char*);
-//data una lettera, cercare tra i versi non ancora usati uno che presenti un’allitterazione con quella lettera, dato il database
-char* CercaAlliterazione(char, char**);
+//controlla se, data una lettera e il percorso ad un database, se esiste un verso che ha una alliterazione con quella lettera
+char* CercaAlliterazione(char, const char*);
 //dati due interi calcola la percentuale della lunghezza del minore sul maggiore
 float CalcolaPercentuale(int, int);
-//dato il percorso, carica su una matrice in memoria il contenuto del databse
-char** CaricaDatabase(const char*);
-

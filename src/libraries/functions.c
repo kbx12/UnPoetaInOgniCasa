@@ -12,7 +12,7 @@ int CheckInRima(char* verso1, char* verso2) {
     return 0;
 }
 
-char* CercaRima(char* verso, char** database) {
+char* CercaRima(char* verso, const char* path_to_database) {
     return NULL;
 }
 
@@ -20,7 +20,7 @@ char* ApplicaCesura(char* verso) {
     return NULL;
 }
 
-char* CercaCesura(char** database) {
+char* CercaCesura(const char* path_to_database) {
     return NULL;
 }
 
@@ -28,7 +28,7 @@ int CheckAssonanza(char* verso1, char* verso2) {
     return 0;
 }
 
-char* CercaAssonanza(char* verso, char** database) {
+char* CercaAssonanza(char* verso, const char* path_to_database) {
     return NULL;
 }
 
@@ -36,7 +36,7 @@ int CheckAlliterazione(char* verso) {
     return 0;
 }
 
-char* CercaAlliterazione(char lettera, char** database) {
+char* CercaAlliterazione(char lettera, const char* path_to_database) {
     return NULL;
 }
 
