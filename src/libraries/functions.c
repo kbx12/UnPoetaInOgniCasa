@@ -5,7 +5,13 @@
 #include "functions.h"
 
 int CalcolaCompatibilita(char* verso1, char* verso2) {
-    return 0;
+    int len1 = strlen(verso1);
+    int len2 = strlen(verso2);
+
+    int len_diff = Max(len1, len2) - Min(len1, len2);
+    float perc_len_diff = CalcolaPercentuale(len_diff, Max(len1, len2));
+    if (perc_len_diff > 20) { return 0; }
+    else { return 1; }
 }
 
 int CheckInRima(char* verso1, char* verso2) {
@@ -40,6 +46,17 @@ char* CercaAlliterazione(char lettera, const char* path_to_database) {
     return NULL;
 }
 
-float CalcolaPercentuale(int n1, int n2) {
-    return 0;
+float CalcolaPercentuale(int a, int b) {
+    //min:max=x:100
+    float percentage = (Min(a, b) * 100) / (float)Max(a, b);
+    return percentage;
+}
+
+int Max(int a, int b) {
+    if (a > b) { return a; }
+    else { return b; }
+}
+int Min(int a, int b) {
+    if (a < b) { return a; }
+    else { return b; }
 }

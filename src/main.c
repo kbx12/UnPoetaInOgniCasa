@@ -43,7 +43,6 @@ int main(int argc, char** argv) {
             }
             else {
                 printf("I due versi non sono compatibili!\n");
-                printf("%s\n%s", verso1, verso2);
             }
         }
         else {

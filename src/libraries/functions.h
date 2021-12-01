@@ -18,5 +18,9 @@ char* CercaAssonanza(char*, const char*);
 int CheckAlliterazione(char*);
 //controlla se, data una lettera e il percorso ad un database, se esiste un verso che ha una alliterazione con quella lettera
 char* CercaAlliterazione(char, const char*);
-//dati due interi calcola la percentuale della lunghezza del minore sul maggiore
+//dati due interi calcola la percentuale della lunghezza del minore sul maggiore(il maggiore è il primo dei due)
 float CalcolaPercentuale(int, int);
+//dati due numeri interi ritorna il maggiore
+int Max(int, int);
+//dati due numeri interi ritorna il minore
+int Min(int, int);
