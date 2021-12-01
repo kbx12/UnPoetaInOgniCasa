@@ -43,7 +43,3 @@ char* CercaAlliterazione(char lettera, const char* path_to_database) {
 float CalcolaPercentuale(int n1, int n2) {
     return 0;
 }
-
-char** CaricaDatabase(const char* path_to_database) {
-    return NULL;
-}
