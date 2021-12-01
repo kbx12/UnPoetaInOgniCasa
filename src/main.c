@@ -3,7 +3,8 @@
 #include "libraries/functions.h"
 
 #define MAX_LEN_VERSO 150
-#define PATH_TO_DATABASE "../futuribili.txt"
+//percorso relativo al database se si esegue il programma nella directory del progetto
+#define PATH_TO_DATABASE "assets/futuribili.txt"
 
 //visualizza il menù delle opzioni
 void VisualizzaMenu();
@@ -21,6 +22,8 @@ void NonAncoraImplementato() {
 }
 
 int main(int argc, char** argv) {
+    FILE* fp = fopen(PATH_TO_DATABASE, "r");
+    if (fp != NULL) { printf("FUCK YEAH"); }
     int funzionalita;
     VisualizzaMenu();
     do {
@@ -222,6 +225,6 @@ char* InserisciVerso() {
     verso = (char*)malloc(sizeof(char) * MAX_LEN_VERSO);
     if (verso == NULL) { return NULL; }
     printf("Inserisci un verso => ");
-    scanf("%[^\n]%*c", verso);
+    scanf("%s", verso);
     return verso;
 }
