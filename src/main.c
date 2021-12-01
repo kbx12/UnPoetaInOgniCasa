@@ -3,20 +3,20 @@
 #include "libraries/functions.h"
 
 #define MAX_LEN_VERSO 150
-//percorso relativo al database se si esegue il programma nella directory del progetto
+/* percorso relativo al database se si esegue il programma nella directory del progetto */
 #define PATH_TO_DATABASE "assets/futuribili.txt"
 
-//visualizza il menù delle opzioni
+/* visualizza il menù delle opzioni */
 void VisualizzaMenu();
-//chiede l'opzione da utilizzzare e la ritorna come intero
+/* chiede l'opzione da utilizzzare e la ritorna come intero */
 int ChiediFunzionalita();
-//fa inserire un verso all'utente e ritorna un putatore ad esso
+/* fa inserire un verso all'utente e ritorna un putatore ad esso */
 char* InserisciVerso();
-//mostra un errore di allocazione
+/* mostra un errore di allocazione */
 void CreaErrore() {
     printf("ERRORE DI ALLOCAZIONE.\nIl programma verra' terminato.");
 }
-//temporaneo
+/* temporaneo */
 void NonAncoraImplementato() {
     printf("QUESTA FUNZIONALITA' NON E' ANCORA STATA IMPLEMENTATA\nIl programma verra' terminato.");
 }
@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
         char* verso2 = InserisciVerso();
         if (verso1 != NULL && verso2 != NULL) {
             int compatibilita = CalcolaCompatibilita(verso1, verso2);
-            //1 se la compatibilità è verificata, 0 se non lo è
+            /* 1 se la compatibilità è verificata, 0 se non lo è */
             if (compatibilita == 1) {
                 printf("I due versi sono compatibili!\n");
             }
@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
         char* verso2 = InserisciVerso();
         if (verso1 != NULL && verso2 != NULL) {
             int check_rima = CheckInRima(verso1, verso2);
-            //1 se sono in rima, 0 se non lo sono
+            /* 1 se sono in rima, 0 se non lo sono */
             if (check_rima == 1) {
                 printf("I due versi sono in rima!\n");
             }
@@ -72,8 +72,10 @@ int main(int argc, char** argv) {
     case 3:
     {
         char* verso = InserisciVerso();
-        if (verso != NULL) {
-            char* verso_in_rima = CercaRima(verso, PATH_TO_DATABASE);
+        int numero_righe;
+        char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
+        if (verso != NULL && database != NULL) {
+            char* verso_in_rima = CercaRima(verso, database, numero_righe);
             if (verso_in_rima != NULL) {
                 printf("Ecco il verso che fa per te!\n=> %s", verso_in_rima);
             }
@@ -106,8 +108,10 @@ int main(int argc, char** argv) {
     case 5:
     {
         char* verso = InserisciVerso();
-        if (verso != NULL) {
-            verso = CercaCesura(PATH_TO_DATABASE);
+        int numero_righe;
+        char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
+        if (verso != NULL && database != NULL) {
+            verso = CercaCesura(database, numero_righe);
             if (verso != NULL) {
                 printf("Il verso che è stato trovato e cesurato e':\n=> %s", verso);
             }
@@ -126,7 +130,7 @@ int main(int argc, char** argv) {
         char* verso2 = InserisciVerso();
         if (verso1 != NULL && verso2 != NULL) {
             int check_assonanza = CheckAssonanza(verso1, verso2);
-            //1 se sono in assonanza, 0 se non lo sono
+            /* 1 se sono in assonanza, 0 se non lo sono */
             if (check_assonanza == 1) {
                 printf("I due versi sono in assonanza!\n");
             }
@@ -142,8 +146,10 @@ int main(int argc, char** argv) {
     case 7:
     {
         char* verso = InserisciVerso();
-        if (verso != NULL) {
-            char* verso_in_assonanza = CercaAssonanza(verso, PATH_TO_DATABASE);
+        int numero_righe;
+        char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
+        if (verso != NULL && database != NULL) {
+            char* verso_in_assonanza = CercaAssonanza(verso, database, numero_righe);
             if (verso_in_assonanza != NULL) {
                 printf("Ecco il verso che fa per te!\n=> %s", verso_in_assonanza);
             }
@@ -161,7 +167,7 @@ int main(int argc, char** argv) {
         char* verso = InserisciVerso();
         if (verso != NULL) {
             int check_alliterazione = CheckAlliterazione(verso);
-            //1 se c'è una alliterazione, 0 se non c'è
+            /* 1 se c'è una alliterazione, 0 se non c'è */
             if (check_alliterazione == 1) {
                 printf("Il tuo verso presenta una alliterazione.");
             }
@@ -179,18 +185,26 @@ int main(int argc, char** argv) {
         char lettera;
         printf("Inserisci una lettera per la ricerca della alliterazione => ");
         scanf("%c", &lettera);
-        char* verso_alliterante = CercaAlliterazione(lettera, PATH_TO_DATABASE);
-        if (verso_alliterante != NULL) {
-            printf("Abbiamo trovato un verso alliterante:\n => %s", verso_alliterante);
+        int numero_righe;
+        char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
+        if (database != NULL) {
+            char* verso_alliterante = CercaAlliterazione(lettera, database, numero_righe);
+            if (verso_alliterante != NULL) {
+                printf("Abbiamo trovato un verso alliterante:\n => %s", verso_alliterante);
+            }
+            else {
+                printf("Non è stato possibile trovare un verso alliterante.");
+            }
         }
         else {
-            printf("Non è stato possibile trovare un verso alliterante.");
+            CreaErrore();
         }
         break;
     }
     default:
         return 0;
     }
+
     return 0;
 }
 
@@ -216,7 +230,7 @@ int ChiediFunzionalita() {
     return funz;
 }
 
-//TODO: permetti di inserire versi con gli spazi(scanf non funziona).
+/* TODO: permetti di inserire versi con gli spazi(scanf non funziona). */
 char* InserisciVerso() {
     char* verso;
     verso = (char*)malloc(sizeof(char) * MAX_LEN_VERSO);

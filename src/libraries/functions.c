@@ -21,7 +21,7 @@ int CheckInRima(char* verso1, char* verso2) {
     return 0;
 }
 
-char* CercaRima(char* verso, const char* path_to_database) {
+char* CercaRima(char* verso, char** database, int numero_righe) {
     return NULL;
 }
 
@@ -29,7 +29,7 @@ char* ApplicaCesura(char* verso) {
     return NULL;
 }
 
-char* CercaCesura(const char* path_to_database) {
+char* CercaCesura(char** database, int numero_righe) {
     return NULL;
 }
 
@@ -37,7 +37,7 @@ int CheckAssonanza(char* verso1, char* verso2) {
     return 0;
 }
 
-char* CercaAssonanza(char* verso, const char* path_to_database) {
+char* CercaAssonanza(char* verso, char** database, int numero_righe) {
     return NULL;
 }
 
@@ -45,7 +45,7 @@ int CheckAlliterazione(char* verso) {
     return 0;
 }
 
-char* CercaAlliterazione(char lettera, const char* path_to_database) {
+char* CercaAlliterazione(char lettera, char** database, int numero_righe) {
     return NULL;
 }
 
@@ -62,4 +62,8 @@ int Max(int a, int b) {
 int Min(int a, int b) {
     if (a < b) { return a; }
     else { return b; }
+}
+
+char** CaricaDatabase(const char* percorso_file, const int max_len_verso, int* numero_righe) {
+    return NULL;
 }
