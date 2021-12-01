@@ -22,8 +22,6 @@ void NonAncoraImplementato() {
 }
 
 int main(int argc, char** argv) {
-    FILE* fp = fopen(PATH_TO_DATABASE, "r");
-    if (fp != NULL) { printf("FUCK YEAH"); }
     int funzionalita;
     VisualizzaMenu();
     do {
