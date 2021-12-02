@@ -10,7 +10,7 @@
 
 ### To do(s)
 
-- [ ] sistemare la funzione `char* InserisciVerso()`: al momento non si riesce a chiamare la funzione due volte di fila senza che la prima delle due stringhe venga vuota.
+- [x] sistemare la funzione `char* InserisciVerso()`: al momento non si riesce a chiamare la funzione due volte di fila senza che la prima delle due stringhe venga vuota.
 - [x] implementare la funzione `int CalcolaCompatibilita(char* verso1, char* verso2)` che dati due versi ritorna `1` se essi sono compatibili (vedi problema) o `0` se non lo sono.
 - [ ] implementare la funzione `int CheckInRima(char* verso1, char* verso2)` che dati due versi controlla se sono in rima (vedi problema) e ritorna `1` se lo sono o `0` se non lo sono.
 - [ ]  implementare la funzione `char** CercaRima(char* verso, char** database, int* numero_righe)` che dato un verso e un array di stringhe proveniente dal database insieme alla lunghezza di tale array ritorna la prima stringa che è in rima con il verso oppure un puntatore nullo (se non esiste tale stringa).
@@ -21,8 +21,8 @@
 - [ ] implementare la funzione `int CheckAlliterazione(char* verso)` che dato un verso ritorna `1` se il verso contiene una allitterazione (vedi problema) o `0` se non la contiene.
 - [ ] implementare la funzione `char* CercaAlliterazione(char lettera, char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ed una lettera ritorna la prima stringa nel database che ha una allitterazione con quella lettera oppure un puntatore nullo. 
 - [x] implementare la funzione di supporto `float CalcolaPercentuale(int n1, int n2)` che dati due numeri calcola la percentuale di uno rispetto all'altro e la ritorna. (`5` è il `50%` di `10`).
-- [ ] implementare la funzione di supporto `char** CaricaDatabase(const char* path_to_database, const int max_len_verso, int* numero_righe)` che dato un percorso ad un file ritorna un array di stringhe dove ogni entrata corrisponde ad una riga del file.
-- [ ] liberare le stringhe dopo l'uso nel main.
+- [x] implementare la funzione di supporto `char** CaricaDatabase(const char* path_to_database, const int max_len_verso, int* numero_righe)` che dato un percorso ad un file ritorna un array di stringhe dove ogni entrata corrisponde ad una riga del file.
+- [x] liberare le stringhe dopo l'uso nel main.
 - [ ] ottimizzare la funzione `char* InserisciVerso()` permettendo di allocare solo la quantità di memoria strettamente necessaria.
 ### Come compilare
 
