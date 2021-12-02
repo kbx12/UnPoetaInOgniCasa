@@ -57,3 +57,6 @@ int Max(int, int);
 
 /* dati due numeri interi ritorna il minore */
 int Min(int, int);
+
+/* data una stringa ne ritorna una nuova ma in minuscolo */
+char* ToLower(char*);

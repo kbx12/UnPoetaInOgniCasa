@@ -198,3 +198,19 @@ void LiberaDatabase(char** verses, size_t count) {
 		free(verses);
 	}
 }
+
+
+char* ToLower(char* str) {
+	size_t str_len = strlen(str);
+	char* rtn_str = (char*)malloc(sizeof(char) * str_len);
+	if (rtn_str == NULL) { return NULL; }
+	for (int i = 0; i < str_len; i++) {
+		if (*(str + i) >= 65 && *(str + i) <= 90) {
+			*(rtn_str + i) = *(str + i) + 32;
+		}
+		else {
+			*(rtn_str + i) = *(str + i);
+		}
+	}
+	return rtn_str;
+}
