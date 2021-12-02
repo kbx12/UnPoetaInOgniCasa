@@ -27,9 +27,18 @@ char* CercaRima(char* verso, char** database, int numero_righe) {
     return NULL;
 }
 
-char* ApplicaCesura(char* verso) {
-    /*NON IMPLEMENTATO*/
-    return NULL;
+char* ApplicaCesura(char* verso)
+{
+    char *stringa = verso;
+    while (*stringa != '\0' && *stringa != '.' && *stringa != ';')
+        ++stringa;
+    
+    if (*stringa == '\0')
+        return NULL;
+    
+    *stringa = '\0';
+
+    return verso;
 }
 
 char* CercaCesura(char** database, int numero_righe) {

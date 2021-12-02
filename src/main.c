@@ -230,12 +230,13 @@ int ChiediFunzionalita() {
     return funz;
 }
 
-/* TODO: permetti di inserire versi con gli spazi(scanf non funziona). */
+/* TODO: remove getchar */
 char* InserisciVerso() {
     char* verso;
     verso = (char*)malloc(sizeof(char) * MAX_LEN_VERSO);
     if (verso == NULL) { return NULL; }
     printf("Inserisci un verso => ");
-    scanf("%s", verso);
+    getchar();
+    fgets(verso, MAX_LEN_VERSO, stdin);
     return verso;
 }
