@@ -3,7 +3,7 @@
 #include "libraries/functions.h"
 
 #define MAX_LEN_VERSO 150
-/* percorso relativo al database se si esegue il programma nella directory del progetto */
+/* percorso relativo al database se si esegue il programma nella directory del progetto. */
 #define PATH_TO_DATABASE "assets/futuribili.txt"
 
 /* visualizza il menù delle opzioni */
