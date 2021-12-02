@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "libraries/functions.h"
+#include <string.h>
 
 #define MAX_LEN_VERSO 150
-/* percorso relativo al database se si esegue il programma nella directory del progetto */
+/* percorso relativo al database se si esegue il programma nella directory del progetto. */
 #define PATH_TO_DATABASE "assets/futuribili.txt"
 
 /* visualizza il menù delle opzioni */
@@ -250,10 +251,17 @@ int ChiediFunzionalita() {
 /* TODO: remove getchar */
 char* InserisciVerso() {
     char* verso;
+    char* rlverso;
+    int rl;
     verso = (char*)malloc(sizeof(char) * MAX_LEN_VERSO);
     if (verso == NULL) { return NULL; }
     printf("Inserisci un verso => ");
     getchar();
     fgets(verso, MAX_LEN_VERSO, stdin);
-    return verso;
+    for (rl=0; verso[rl]!='\n'; rl++);
+    rlverso = (char*)malloc(sizeof(char) * rl);
+    if (rlverso == NULL) { return verso; }
+    strcpy(rlverso, verso);
+    free(verso);
+    return rlverso;
 }
