@@ -22,7 +22,7 @@
 - [ ] implementare la funzione `char* CercaAlliterazione(char lettera, char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ed una lettera ritorna la prima stringa nel database che ha una allitterazione con quella lettera oppure un puntatore nullo. 
 - [x] implementare la funzione di supporto `float CalcolaPercentuale(int n1, int n2)` che dati due numeri calcola la percentuale di uno rispetto all'altro e la ritorna. (`5` è il `50%` di `10`).
 - [ ] implementare la funzione di supporto `char** CaricaDatabase(const char* path_to_database, const int max_len_verso, int* numero_righe)` che dato un percorso ad un file ritorna un array di stringhe dove ogni entrata corrisponde ad una riga del file.
-- [ ] liberare le stringhe dopi l'uso nel main.
+- [ ] liberare le stringhe dopo l'uso nel main.
 - [ ] ottimizzare la funzione `char* InserisciVerso()` permettendo di allocare solo la quantità di memoria strettamente necessaria.
 ### Come compilare
 
