@@ -116,18 +116,16 @@ int main(int argc, char** argv) {
     }
     case 5:
     {
-        char* verso = InserisciVerso();
         size_t numero_righe;
         char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
-        if (verso != NULL && database != NULL) {
-            verso = CercaCesura(database, numero_righe);
+        if (database != NULL) {
+            char* verso = CercaCesura(database, numero_righe);
             if (verso != NULL) {
                 printf("Il verso che è stato trovato e cesurato e':\n=> %s", verso);
             }
             else {
                 printf("Non e' stato possibile trovare un verso cesurabile.");
             }
-            free(verso);
             LiberaDatabase(database, numero_righe);
         }
         else {

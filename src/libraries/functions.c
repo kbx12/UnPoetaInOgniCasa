@@ -42,7 +42,12 @@ char* ApplicaCesura(char* verso) {
 }
 
 char* CercaCesura(char** database, size_t numero_righe) {
-	/*NON IMPLEMENTATO*/
+	for (int i = 0; i < numero_righe; i++) {
+		char* tentativo = ApplicaCesura(*(database + i));
+		if (tentativo != NULL) {
+			return tentativo;
+		}
+	}
 	return NULL;
 }
 
