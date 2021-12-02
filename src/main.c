@@ -226,7 +226,7 @@ void VisualizzaMenu() {
 int ChiediFunzionalita() {
     int funz;
     printf("Inserisci qui il numero della funzionalita che desideri utilizzare => ");
-    scanf("%d", &funz);
+    scanf("%d\n", &funz);
     return funz;
 }
 
