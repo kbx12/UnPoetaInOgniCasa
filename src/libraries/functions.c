@@ -18,34 +18,42 @@ int CalcolaCompatibilita(char* verso1, char* verso2) {
 }
 
 int CheckInRima(char* verso1, char* verso2) {
+    /*NON IMPLEMENTATO*/
     return 0;
 }
 
 char* CercaRima(char* verso, char** database, int numero_righe) {
+    /*NON IMPLEMENTATO*/
     return NULL;
 }
 
 char* ApplicaCesura(char* verso) {
+    /*NON IMPLEMENTATO*/
     return NULL;
 }
 
 char* CercaCesura(char** database, int numero_righe) {
+    /*NON IMPLEMENTATO*/
     return NULL;
 }
 
 int CheckAssonanza(char* verso1, char* verso2) {
+    /*NON IMPLEMENTATO*/
     return 0;
 }
 
 char* CercaAssonanza(char* verso, char** database, int numero_righe) {
+    /*NON IMPLEMENTATO*/
     return NULL;
 }
 
 int CheckAlliterazione(char* verso) {
+    /*NON IMPLEMENTATO*/
     return 0;
 }
 
 char* CercaAlliterazione(char lettera, char** database, int numero_righe) {
+    /*NON IMPLEMENTATO*/
     return NULL;
 }
 
@@ -65,5 +73,6 @@ int Min(int a, int b) {
 }
 
 char** CaricaDatabase(const char* percorso_file, const int max_len_verso, int* numero_righe) {
+    /*NON IMPLEMENTATO*/
     return NULL;
 }
