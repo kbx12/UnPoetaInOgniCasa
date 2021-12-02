@@ -33,8 +33,16 @@ char* CercaRima(char* verso, char** database, int numero_righe)
 
 char* ApplicaCesura(char* verso)
 {
-    /*NON IMPLEMENTATO*/
-    return NULL;
+    char *stringa = verso;
+    while (*stringa != '\0' && *stringa != '.' && *stringa != ';')
+        ++stringa;
+    
+    if (*stringa == '\0')
+        return NULL;
+    
+    *stringa = '\0';
+
+    return verso;
 }
 
 char* CercaCesura(char** database, int numero_righe)
@@ -89,14 +97,6 @@ int Min(int a, int b)
     else 
         return b;
 }
-
-char** CaricaDatabase(const char* percorso_file, const int max_len_verso, int* numero_righe)
-{
-    /*NON IMPLEMENTATO*/
-    return NULL;
-}
-
-
 
 char** CaricaDatabase(const char* filename, size_t verse_max_len, size_t* out_size)
 {
