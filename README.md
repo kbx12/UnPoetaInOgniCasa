@@ -13,9 +13,9 @@
 - [ ] sistemare la funzione `char* InserisciVerso()`: al momento non si riesce a chiamare la funzione due volte di fila senza che la prima delle due stringhe venga vuota.
 - [x] implementare la funzione `int CalcolaCompatibilita(char* verso1, char* verso2)` che dati due versi ritorna `1` se essi sono compatibili (vedi problema) o `0` se non lo sono.
 - [ ] implementare la funzione `int CheckInRima(char* verso1, char* verso2)` che dati due versi controlla se sono in rima (vedi problema) e ritorna `1` se lo sono o `0` se non lo sono.
-- [ ]  implementare la funzione `char** CercaRima(char* verso, char** database, int* numero_righe)` che dato un verso e un array di stringhe proveniente dal database e la lunghezza di tale array ritorna la prima stringa che è in rima con il verso oppure un puntatore nullo se non esiste tale stringa.
+- [ ]  implementare la funzione `char** CercaRima(char* verso, char** database, int* numero_righe)` che dato un verso e un array di stringhe proveniente dal database insieme alla lunghezza di tale array ritorna la prima stringa che è in rima con il verso oppure un puntatore nullo (se non esiste tale stringa).
 - [ ] implementare la funzione `char* ApplicaCesura(char* verso) ` che dato un verso ritorna la cesura di tale verso (vedi problema) oppure un puntatore nullo se è impossibile applicare la cesura.
-- [ ] implementare la funzione `char* CercaCesura(char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array  ritorna la prima stringa nel database che è cesurabile(?) oppure un puntatore nullo.
+- [ ] implementare la funzione `char* CercaCesura(char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ritorna la prima stringa nel database che è cesurabile(?) oppure un puntatore nullo.
 - [ ] implementare la funzione `int CheckAssonanza(char* verso1, char* verso2)` che dati due versi ritorna `1` se i versi sono assonanti o `0` se non lo sono.
 - [ ] implementare la funzione `char* CercaAssonanza(char* verso, char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ritorna la prima stringa assonante nel database con il verso dato oppure un puntatore nullo se tale stringa non esiste.
 - [ ] implementare la funzione `int CheckAlliterazione(char* verso)` che dato un verso ritorna `1` se il verso contiene una allitterazione (vedi problema) o `0` se non la contiene.
@@ -35,11 +35,13 @@ In generale bisogna compilare insieme i file `main.c` che si trova in `src/main.
 
 ### Suggerimenti, errori, dubbi e altro
 
-Per qualsiasi cosa dubbio o suggerimento per migliorare il programma o se trovate qualche errore scrivetemi su Whattsapp oppure sulla mia mail @thecaptaincraken@gmail.com. 
+Per qualsiasi cosa dubbio o suggerimento per migliorare il programma o se trovate qualche errore scrivetemi su Whattsapp oppure sulla mia mail @thecaptaincraken@gmail.com oppure (ancora meglio!) create una nuova issue su Github.
 
 ### Come contribuire
 
 Per scaricare il progetto bisogna creare un account [GitHub](https://github.com/) quindi scaricare il client desktop di GitHub. Dopo andare all'indirizzo web di [questa repository](https://github.com/TheCaptainCraken/UnPoetaInOgniCasa) e clickare sul tasto `code > Open with GitHub Desktop`.
+
+Quindi creare una fork della repository.
 
 Una volta aggiunte le funzionalità (cha vanno testate prima) riaprire il client desktop di GitHub e creare una pull request.
 
