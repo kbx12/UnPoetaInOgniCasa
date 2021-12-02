@@ -14,7 +14,7 @@
 - [x] implementare la funzione `int CalcolaCompatibilita(char* verso1, char* verso2)` che dati due versi ritorna `1` se essi sono compatibili (vedi problema) o `0` se non lo sono.
 - [ ] implementare la funzione `int CheckInRima(char* verso1, char* verso2)` che dati due versi controlla se sono in rima (vedi problema) e ritorna `1` se lo sono o `0` se non lo sono.
 - [ ]  implementare la funzione `char** CercaRima(char* verso, char** database, int* numero_righe)` che dato un verso e un array di stringhe proveniente dal database insieme alla lunghezza di tale array ritorna la prima stringa che è in rima con il verso oppure un puntatore nullo (se non esiste tale stringa).
-- [ ] implementare la funzione `char* ApplicaCesura(char* verso) ` che dato un verso ritorna la cesura di tale verso (vedi problema) oppure un puntatore nullo se è impossibile applicare la cesura.
+- [x] implementare la funzione `char* ApplicaCesura(char* verso) ` che dato un verso ritorna la cesura di tale verso (vedi problema) oppure un puntatore nullo se è impossibile applicare la cesura.
 - [ ] implementare la funzione `char* CercaCesura(char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ritorna la prima stringa nel database che è cesurabile(?) oppure un puntatore nullo.
 - [ ] implementare la funzione `int CheckAssonanza(char* verso1, char* verso2)` che dati due versi ritorna `1` se i versi sono assonanti o `0` se non lo sono.
 - [ ] implementare la funzione `char* CercaAssonanza(char* verso, char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ritorna la prima stringa assonante nel database con il verso dato oppure un puntatore nullo se tale stringa non esiste.
@@ -22,7 +22,8 @@
 - [ ] implementare la funzione `char* CercaAlliterazione(char lettera, char** database, int* numero_righe)` che dato un array di stringhe proveniente dal database e la lunghezza di tale array ed una lettera ritorna la prima stringa nel database che ha una allitterazione con quella lettera oppure un puntatore nullo. 
 - [x] implementare la funzione di supporto `float CalcolaPercentuale(int n1, int n2)` che dati due numeri calcola la percentuale di uno rispetto all'altro e la ritorna. (`5` è il `50%` di `10`).
 - [ ] implementare la funzione di supporto `char** CaricaDatabase(const char* path_to_database, const int max_len_verso, int* numero_righe)` che dato un percorso ad un file ritorna un array di stringhe dove ogni entrata corrisponde ad una riga del file.
-
+- [ ] liberare le stringhe dopi l'uso nel main.
+- [ ] ottimizzare la funzione `char* InserisciVerso()` permettendo di allocare solo la quantità di memoria strettamente necessaria.
 ### Come compilare
 
 Per compilare il progetto da Windows bisogna entrare con il terminale nella cartella del progetto e poi scrivere il comando da PowerShell:
