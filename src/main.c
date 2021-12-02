@@ -44,6 +44,9 @@ int main(int argc, char** argv) {
             else {
                 printf("I due versi non sono compatibili!\n");
             }
+
+            free(verso1);
+            free(verso2);
         }
         else {
             CreaErrore();
@@ -63,6 +66,8 @@ int main(int argc, char** argv) {
             else {
                 printf("I due versi non sono in rima!\n");
             }
+            free(verso1);
+            free(verso2);
         }
         else {
             CreaErrore();
@@ -72,16 +77,19 @@ int main(int argc, char** argv) {
     case 3:
     {
         char* verso = InserisciVerso();
-        int numero_righe;
+        size_t numero_righe;
         char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
         if (verso != NULL && database != NULL) {
             char* verso_in_rima = CercaRima(verso, database, numero_righe);
             if (verso_in_rima != NULL) {
                 printf("Ecco il verso che fa per te!\n=> %s", verso_in_rima);
+                free(verso_in_rima);
             }
             else {
                 printf("Non abbiamo trovato un verso che fa per te.");
             }
+            free(verso);
+            LiberaDatabase(database, numero_righe);
         }
         else {
             CreaErrore();
@@ -99,6 +107,7 @@ int main(int argc, char** argv) {
             else {
                 printf("Non e' stato possibile applicare la cesura.");
             }
+            free(verso);
         }
         else {
             CreaErrore();
@@ -108,7 +117,7 @@ int main(int argc, char** argv) {
     case 5:
     {
         char* verso = InserisciVerso();
-        int numero_righe;
+        size_t numero_righe;
         char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
         if (verso != NULL && database != NULL) {
             verso = CercaCesura(database, numero_righe);
@@ -118,6 +127,8 @@ int main(int argc, char** argv) {
             else {
                 printf("Non e' stato possibile trovare un verso cesurabile.");
             }
+            free(verso);
+            LiberaDatabase(database, numero_righe);
         }
         else {
             CreaErrore();
@@ -137,6 +148,8 @@ int main(int argc, char** argv) {
             else {
                 printf("I due versi non sono in assonanza!\n");
             }
+            free(verso1);
+            free(verso2);
         }
         else {
             CreaErrore();
@@ -146,16 +159,19 @@ int main(int argc, char** argv) {
     case 7:
     {
         char* verso = InserisciVerso();
-        int numero_righe;
+        size_t numero_righe;
         char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
         if (verso != NULL && database != NULL) {
             char* verso_in_assonanza = CercaAssonanza(verso, database, numero_righe);
             if (verso_in_assonanza != NULL) {
                 printf("Ecco il verso che fa per te!\n=> %s", verso_in_assonanza);
+                free(verso_in_assonanza);
             }
             else {
                 printf("Non abbiamo trovato un verso che fa per te.");
             }
+            free(verso);
+            LiberaDatabase(database, numero_righe);
         }
         else {
             CreaErrore();
@@ -174,6 +190,7 @@ int main(int argc, char** argv) {
             else {
                 printf("Il tuo verso non presenta una alliterazione.");
             }
+            free(verso);
         }
         else {
             CreaErrore();
@@ -185,16 +202,18 @@ int main(int argc, char** argv) {
         char lettera;
         printf("Inserisci una lettera per la ricerca della alliterazione => ");
         scanf("%c", &lettera);
-        int numero_righe;
+        size_t numero_righe;
         char** database = CaricaDatabase(PATH_TO_DATABASE, MAX_LEN_VERSO, &numero_righe);
         if (database != NULL) {
             char* verso_alliterante = CercaAlliterazione(lettera, database, numero_righe);
             if (verso_alliterante != NULL) {
                 printf("Abbiamo trovato un verso alliterante:\n => %s", verso_alliterante);
+                free(verso_alliterante);
             }
             else {
                 printf("Non è stato possibile trovare un verso alliterante.");
             }
+            LiberaDatabase(database, numero_righe);
         }
         else {
             CreaErrore();

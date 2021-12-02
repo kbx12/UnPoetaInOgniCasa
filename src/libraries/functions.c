@@ -23,7 +23,7 @@ int CheckInRima(char* verso1, char* verso2) {
 	return 0;
 }
 
-char* CercaRima(char* verso, char** database, int numero_righe) {
+char* CercaRima(char* verso, char** database, size_t numero_righe) {
 	/*NON IMPLEMENTATO*/
 	return NULL;
 }
@@ -41,7 +41,7 @@ char* ApplicaCesura(char* verso) {
 	return verso;
 }
 
-char* CercaCesura(char** database, int numero_righe) {
+char* CercaCesura(char** database, size_t numero_righe) {
 	/*NON IMPLEMENTATO*/
 	return NULL;
 }
@@ -51,7 +51,7 @@ int CheckAssonanza(char* verso1, char* verso2) {
 	return 0;
 }
 
-char* CercaAssonanza(char* verso, char** database, int numero_righe) {
+char* CercaAssonanza(char* verso, char** database, size_t numero_righe) {
 	/*NON IMPLEMENTATO*/
 	return NULL;
 }
@@ -61,7 +61,7 @@ int CheckAlliterazione(char* verso) {
 	return 0;
 }
 
-char* CercaAlliterazione(char lettera, char** database, int numero_righe) {
+char* CercaAlliterazione(char lettera, char** database, size_t numero_righe) {
 	/*NON IMPLEMENTATO*/
 	return NULL;
 }
