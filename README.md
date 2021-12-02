@@ -23,7 +23,7 @@
 - [x] implementare la funzione di supporto `float CalcolaPercentuale(int n1, int n2)` che dati due numeri calcola la percentuale di uno rispetto all'altro e la ritorna. (`5` è il `50%` di `10`).
 - [x] implementare la funzione di supporto `char** CaricaDatabase(const char* path_to_database, const int max_len_verso, int* numero_righe)` che dato un percorso ad un file ritorna un array di stringhe dove ogni entrata corrisponde ad una riga del file.
 - [x] liberare le stringhe dopo l'uso nel main.
-- [ ] ottimizzare la funzione `char* InserisciVerso()` permettendo di allocare solo la quantità di memoria strettamente necessaria.
+- [x] ottimizzare la funzione `char* InserisciVerso()` permettendo di allocare solo la quantità di memoria strettamente necessaria.
 ### Come compilare
 
 Per compilare il progetto da Windows bisogna entrare con il terminale nella cartella del progetto e poi scrivere il comando da PowerShell:
