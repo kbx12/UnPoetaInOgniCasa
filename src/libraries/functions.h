@@ -17,10 +17,11 @@
 *	Prima di terminare l'esecuzione di un programma, se la funzione ha avuto successo è necessario
 *	liberare la memoria allocata. Ciò può essere fatto tramite la funzione LiberaDatabase o manualmente.
 */
-char** CaricaDatabase(const char* /* filename */, size_t /* verse_max_len */, size_t* /* out_size */);
+
+char** CaricaDatabase(const char*, size_t, size_t*);
 
 /* Libera tutta la memoria allocata da CaricaDatabase */
-void LiberaDatabase(char** /* verses */, size_t /* count */)
+void LiberaDatabase(char**, size_t);
 
 /* controlla la compatibilità di due versi */
 int CalcolaCompatibilita(char*, char*);
